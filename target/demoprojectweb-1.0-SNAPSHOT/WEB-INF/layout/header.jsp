@@ -28,6 +28,7 @@
                 <a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/login" />">Login</a>
             </c:if>
             <c:if test="${pageContext.request.userPrincipal.name != null}">
+                <a href="<c:url value = "/admin/add-tour"/>" class="btn btn-outline-success my-2 my-sm-0" >Add</a>
                 <a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/register" />">${pageContext.request.userPrincipal.name}</a> 
                 <a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/logout" />">Logout</a>
             </c:if>

@@ -24,9 +24,14 @@
 </div>
 <c:url value="/tours/${tour.id}/booking" var="booking" />
 <form:form method="post" action="${booking}" modelAttribute="booking" >
-    Adult: <form:input path="adultTicket" />
-    Children: <form:input path="childTicket"/>
-    
+    <br> 
+    <div class="form-group">Adult: <form:input path="adultTicket" /></div>
+
+    <div class="form-group">Children: <form:input path="childTicket"/></div>
+
+
 
     <input type="submit" value="Book" />
+
 </form:form>   
+<br> 

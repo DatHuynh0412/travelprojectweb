@@ -19,6 +19,7 @@
         </c:forEach>
 </ul>
 <div class="row">
+    
     <c:forEach items="${Tour}" var = "tour">
         <div class="col-md-4 col-sm-12" style="padding: 10px;">
             <div class="card">
@@ -28,12 +29,13 @@
                     <p class="card-text">${tour.price}$</p>
                     <a href="<c:url value="/tours/${tour.id}" />" class="btn btn-primary">See Detail</a>
                     <a href="<c:url value="/tours/${tour.id}/booking" />" class="btn btn-danger">Booking Tour</a>
-                    <br>
+                    <br>                
                     <a href="<c:url value = "/admin/${tour.id}/edit"/>" class="btn btn-danger" style="margin-top: 5px">Edit</a>
                     <a href="<c:url value = "/admin/${tour.id}/delete"/>" class="btn btn-danger" style="margin-top: 5px">Delete</a>
                 </div>
             </div>
             <br>        
         </div>
+                
     </c:forEach>
 </div>
