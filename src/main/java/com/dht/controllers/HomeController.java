@@ -9,6 +9,7 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.dht.pojo.Tour;
 import com.dht.pojo.User;
+import com.dht.service.StatsService;
 import com.dht.service.TourService;
 //import com.dht.pojo.User;
 import java.io.IOException;
@@ -33,6 +34,8 @@ public class HomeController {
     private Cloudinary cloudinary;
     @Autowired
     private TourService tourService;
+    @Autowired
+    private StatsService statsService;
     
     @GetMapping("/")
     public String index(Model model, @RequestParam(name = "search", required = false) String kw,
@@ -48,10 +51,10 @@ public class HomeController {
         return "login";
     }
     
-    @RequestMapping("/tours/{id}")
-    public String tourDetail(Model model,
-            @PathVariable(name = "id") Integer id) {
-        model.addAttribute("tour", this.tourService.getTourById(id));
-        return "tour-detail";
+    @GetMapping("/stats")
+    public String stats(Model model){
+        model.addAttribute("Stats", statsService.StatList());
+        
+        return "stats";
     }
 }

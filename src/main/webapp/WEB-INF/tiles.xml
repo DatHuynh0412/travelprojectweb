@@ -42,4 +42,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <put-attribute name="title" value="Login for user" />
         <put-attribute name="content" value="/WEB-INF/pages/login.jsp" />
     </definition>
+    <definition name="stats" extends="baseLayout">
+        <put-attribute name="title" value="Stat for admin" />
+        <put-attribute name="content" value="/WEB-INF/pages/stats.jsp" />
+    </definition>
 </tiles-definitions>

@@ -1,14 +1,17 @@
 D:\Download\JAVA-main\src\main\java\com\dht\controllers\HomeController.java
+D:\Download\JAVA-main\src\main\java\com\dht\service\StatsService.java
 D:\Download\JAVA-main\src\main\java\com\dht\repository\UserRepository.java
 D:\Download\JAVA-main\src\main\java\com\dht\repository\impl\UserRepositoryImpl.java
 D:\Download\JAVA-main\src\main\java\com\dht\service\BookService.java
 D:\Download\JAVA-main\src\main\java\com\dht\pojo\Comment.java
 D:\Download\JAVA-main\src\main\java\com\dht\service\UserService.java
+D:\Download\JAVA-main\src\main\java\com\dht\repository\StatsRepository.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\SpringSecurityConfig.java
 D:\Download\JAVA-main\src\main\java\com\dht\pojo\News.java
 D:\Download\JAVA-main\src\main\java\com\dht\fomatter\TourFormatter.java
 D:\Download\JAVA-main\src\main\java\com\dht\pojo\User.java
 D:\Download\JAVA-main\src\main\java\com\dht\repository\BookRepository.java
+D:\Download\JAVA-main\src\main\java\com\dht\repository\impl\StatsRepositoryImpl.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\HibernateConfig.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\DispatcherServletInit.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\WebSecurityAppContextInit.java
@@ -22,6 +25,7 @@ D:\Download\JAVA-main\src\main\java\com\dht\repository\TourRepository.java
 D:\Download\JAVA-main\src\main\java\com\dht\controllers\TourController.java
 D:\Download\JAVA-main\src\main\java\com\dht\controllers\UserController.java
 D:\Download\JAVA-main\src\main\java\com\dht\repository\impl\TourRepositoryImpl.java
+D:\Download\JAVA-main\src\main\java\com\dht\service\impl\StatsServiceImpl.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\TilesConfig.java
 D:\Download\JAVA-main\src\main\java\com\dht\configs\WebAppContextConfig.java
 D:\Download\JAVA-main\src\main\java\com\dht\service\TourService.java

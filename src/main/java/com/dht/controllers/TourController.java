@@ -101,7 +101,7 @@ public class TourController {
     public String bookingView(@PathVariable("id") Integer id, Model model) {
         Tour tour = tourService.getTourById(id);
         model.addAttribute("booking", new Booking());
-        model.addAttribute("tour",tour);
+        model.addAttribute("tour", tour);
         return "bookingtour";
     }
 
@@ -111,7 +111,14 @@ public class TourController {
     ) {
 
         bookService.booking(id, book);
-        
+
         return "redirect:/";
+    }
+
+    @RequestMapping("/tours/{id}")
+    public String tourDetail(Model model,
+            @PathVariable(name = "id") Integer id) {
+        model.addAttribute("tour", this.tourService.getTourById(id));
+        return "tour-detail";
     }
 }
