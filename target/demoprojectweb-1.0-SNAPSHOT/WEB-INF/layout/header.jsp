@@ -15,7 +15,7 @@
         <a class="navbar-brand" href="<c:url value="/" />">Travel</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">News <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<c:url value="/news"/>">News <span class="sr-only">(current)</span></a>
             </li>
         </ul>
 
@@ -30,7 +30,9 @@
             <c:if test="${pageContext.request.userPrincipal.name != null}">
                 <a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/stats" />">Stats</a>
                 <a href="<c:url value = "/admin/add-tour"/>" class="btn btn-outline-success my-2 my-sm-0" >Add</a>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="">${pageContext.request.userPrincipal.name}</a> 
+                <a class="btn btn-outline-success my-2 my-sm-0" 
+                   href="<c:url value="/user/${pageContext.request.userPrincipal.name}" />">
+                   ${pageContext.request.userPrincipal.name}</a> 
                 <a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/logout" />">Logout</a>            
             </c:if>
         </form>

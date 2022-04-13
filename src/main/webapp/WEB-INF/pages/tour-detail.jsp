@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <h1 class="text-center text-info">TOUR DETAIL</h1>
 
@@ -20,3 +22,24 @@
         <h4>${tour.price}$</h4>
     </div>
 </div>
+<div>
+    <h2>Comment</h2>
+
+
+</div>
+<c:url value="/tours/${tour.id}/comment" var="cmt" />
+<form:form action="${cmt}" method="POST" modelAttribute="comment">
+    <div class="form-check" style=" ">
+        <input value="1" type="radio" class="form-check-input" name="rate">1 Star 
+        <input value="2" type="radio" class="form-check-input" name="rate">2 Star
+        <input value="3" type="radio" class="form-check-input" name="rate">3 Star
+        <input value="4" type="radio" class="form-check-input" name="rate">4 Star 
+        <input value="5" type="radio" class="form-check-input" name="rate">5 Star 
+    </div>
+    <form:textarea path="comment"></form:textarea>
+        <button type="submit">Comment</button>
+</form:form>
+</div>
+<c:forEach items="${commentlist}" var="cmtlist">
+    <p>${cmtlist.userId.username} <br>${cmtlist.comment}</p>      
+</c:forEach>

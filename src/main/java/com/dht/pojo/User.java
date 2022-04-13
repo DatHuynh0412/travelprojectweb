@@ -36,6 +36,9 @@ import org.springframework.web.multipart.MultipartFile;
     @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password"),
     @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole")})
 public class User implements Serializable {
+
+    @OneToMany(mappedBy = "userId")
+    private List<Newscomment> newscommentList;
     public static final String USER = "ROLE_USER";
     public static final String ADMIN = "ROLE_ADMIN";
     private static final long serialVersionUID = 1L;
@@ -169,6 +172,15 @@ public class User implements Serializable {
      */
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    @XmlTransient
+    public List<Newscomment> getNewscommentList() {
+        return newscommentList;
+    }
+
+    public void setNewscommentList(List<Newscomment> newscommentList) {
+        this.newscommentList = newscommentList;
     }
     
 }

@@ -7,8 +7,10 @@ package com.dht.controllers;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.dht.pojo.Booking;
+import com.dht.pojo.Comment;
 import com.dht.pojo.Tour;
 import com.dht.service.BookService;
+import com.dht.service.CommentService;
 import com.dht.service.TourService;
 import java.io.IOException;
 import java.util.Map;
@@ -36,6 +38,8 @@ public class TourController {
     private Cloudinary cloudinary;
     @Autowired
     private BookService bookService;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/admin/add-tour")
     public String addView(Model model) {
@@ -45,19 +49,6 @@ public class TourController {
 
     @PostMapping("/admin/add-tour")
     public String addHandler(Model model, @ModelAttribute(value = "Tour") Tour tour) {
-//        if (!tour.getMultipartFile().isEmpty()) {
-//            try {
-//                Map res = cloudinary.uploader().upload(tour.getMultipartFile().getBytes(),
-//                        ObjectUtils.asMap(
-//                                "resource_type", "auto"
-//                        ));
-//                tour.setImage((String) res.get("secure_url"));
-//            } catch (IOException ex) {
-//                System.out.println(ex.getMessage());
-//            }
-//        }
-//        tourService.addTour(tour);
-//        return "redirect:/";
         if (this.tourService.addOrUpdateTour(tour) == true) {
             return "redirect:/";
         } else {
@@ -119,6 +110,19 @@ public class TourController {
     public String tourDetail(Model model,
             @PathVariable(name = "id") Integer id) {
         model.addAttribute("tour", this.tourService.getTourById(id));
+        model.addAttribute("comment", new Comment());
+        model.addAttribute("commentlist", commentService.getComment(id));
         return "tour-detail";
+    }
+    
+    @PostMapping("/tours/{id}/comment")
+    public String comment(@PathVariable("id") Integer id,
+            @RequestParam(name = "rate") String Rate,
+            @ModelAttribute(value = "comment") Comment comment){
+        Tour tour = tourService.getTourById(id);
+        comment.setTourId(tour);
+        comment.setRate(Integer.parseInt(Rate));
+        commentService.addComment(comment);
+        return "redirect:/tours/{id}";
     }
 }

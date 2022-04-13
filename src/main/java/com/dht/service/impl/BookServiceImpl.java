@@ -7,6 +7,7 @@ package com.dht.service.impl;
 import com.dht.pojo.Booking;
 import com.dht.repository.BookRepository;
 import com.dht.service.BookService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class BookServiceImpl implements BookService{
     @Override
     public void booking(Integer id, Booking book) {
         bookRepository.booking(id, book);
+    }
+
+    @Override
+    public List<Booking> getList(String string) {
+        return bookRepository.getList(string);
     }
     
 }

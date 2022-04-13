@@ -10,6 +10,8 @@ import com.dht.pojo.User;
 import com.dht.repository.BookRepository;
 import com.dht.service.TourService;
 import com.dht.service.UserService;
+import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -42,6 +44,14 @@ public class BookRepositoryImpl implements BookRepository{
         book.setUserId(user);       
         book.setTourId(tour);
         session.save(book);
+    }
+
+    @Override
+    public List<Booking> getList(String username) {
+        User user = userService.getUserByUsername(username);
+        List<Booking> list = user.getBookingList();
+        Hibernate.initialize(list);
+        return list;
     }
     
 }

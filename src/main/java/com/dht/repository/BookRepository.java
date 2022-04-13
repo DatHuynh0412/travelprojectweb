@@ -5,6 +5,7 @@
 package com.dht.repository;
 
 import com.dht.pojo.Booking;
+import java.util.List;
 
 /**
  *
@@ -12,5 +13,5 @@ import com.dht.pojo.Booking;
  */
 public interface BookRepository {
     void booking(Integer id,Booking book);
-    
+    List<Booking> getList(String username);
 }

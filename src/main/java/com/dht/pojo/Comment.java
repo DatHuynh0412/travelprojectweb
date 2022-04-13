@@ -47,6 +47,8 @@ public class Comment implements Serializable {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne
     private User userId;
+    @Column(name ="rate")
+    private Integer rate;
 
     public Comment() {
     }
@@ -110,6 +112,20 @@ public class Comment implements Serializable {
     @Override
     public String toString() {
         return "com.dht.pojo.Comment[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the rate
+     */
+    public Integer getRate() {
+        return rate;
+    }
+
+    /**
+     * @param rate the rate to set
+     */
+    public void setRate(Integer rate) {
+        this.rate = rate;
     }
     
 }

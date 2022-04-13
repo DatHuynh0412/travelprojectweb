@@ -5,6 +5,7 @@
 package com.dht.service;
 
 import com.dht.pojo.Booking;
+import java.util.List;
 
 /**
  *
@@ -12,4 +13,5 @@ import com.dht.pojo.Booking;
  */
 public interface BookService {
      void booking(Integer id,Booking book);
+     List<Booking> getList(String username);
 }

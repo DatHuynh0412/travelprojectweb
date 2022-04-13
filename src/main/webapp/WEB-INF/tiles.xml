@@ -46,4 +46,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <put-attribute name="title" value="Stat for admin" />
         <put-attribute name="content" value="/WEB-INF/pages/stats.jsp" />
     </definition>
+    <definition name="news" extends="baseLayout">
+        <put-attribute name="title" value="News" />
+        <put-attribute name="content" value="/WEB-INF/pages/news.jsp" />
+    </definition>
+    <definition name="details" extends="baseLayout">
+        <put-attribute name="title" value="Details" />
+        <put-attribute name="content" value="/WEB-INF/pages/details.jsp" />
+    </definition>
+     <definition name="userprofile" extends="baseLayout">
+        <put-attribute name="title" value="User profile" />
+        <put-attribute name="content" value="/WEB-INF/pages/userprofile.jsp" />
+    </definition>
 </tiles-definitions>
